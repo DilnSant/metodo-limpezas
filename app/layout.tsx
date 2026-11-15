@@ -9,8 +9,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Método Limpezas - Onde confiança e método se encontram",
-  description: "Limpeza corporativa com padrão e confiança. Especializada em escritórios e consultórios.",
+  title: "Método Limpezas | Limpeza profissional para escritórios e clínicas",
+  description: "Limpeza profissional recorrente para pequenos escritórios e clínicas em São José, Florianópolis, Palhoça e Biguaçu. Solicite uma avaliação.",
   generator: "v0.dev",
   icons: {
     icon: "/favicon.png",
