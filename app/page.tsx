@@ -37,6 +37,7 @@ import {
   UserCheck,
   CalendarCheck,
   BadgeCheck,
+  Quote,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -66,20 +67,28 @@ export default function MetodoLimpezasPage() {
         <span className="hidden md:inline text-slate-400 ml-2">| Mais que limpeza, um método!</span>
       </div>
 
-      {/* Header Fixo */}
+      {/* Header Fixo - Logo aumentada em 40% com metodo-gold-logo.png */}
       <header className="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-navy-800 shadow-xl">
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-          {/* Logo */}
+        <div className="container mx-auto px-4 h-24 flex items-center justify-between">
+          {/* Logo Aumentada em 40% */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative h-14 w-44 flex items-center">
+            <div className="relative h-20 w-24 flex items-center">
               <Image
-                src="/images/metodo-gold-site.png"
+                src="/images/metodo-gold-logo.png"
                 alt="Método Limpezas - Onde confiança e método se encontram"
-                width={190}
-                height={60}
+                width={120}
+                height={100}
                 priority
-                className="h-12 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-[72px] w-auto object-contain transition-transform group-hover:scale-105"
               />
+            </div>
+            <div className="hidden sm:block text-left">
+              <span className="block text-lg font-black tracking-tight text-white leading-none">
+                MÉTODO <span className="text-gold">LIMPEZAS</span>
+              </span>
+              <span className="text-[10px] text-slate-400 font-medium tracking-wider uppercase block mt-1">
+                Mais que limpeza, um método!
+              </span>
             </div>
           </Link>
 
@@ -88,20 +97,20 @@ export default function MetodoLimpezasPage() {
             <Link href="#perfil" className="hover:text-gold transition-colors">
               Para Quem É
             </Link>
-            <Link href="#processo" className="hover:text-gold transition-colors">
-              O Método
-            </Link>
             <Link href="#planos" className="hover:text-gold transition-colors">
-              Planos & Frequências
+              Planos & Garantias
+            </Link>
+            <Link href="#ambientes" className="hover:text-gold transition-colors">
+              Ambientes
+            </Link>
+            <Link href="#predios" className="hover:text-gold transition-colors">
+              Prédios Atendidos
+            </Link>
+            <Link href="#depoimentos" className="hover:text-gold transition-colors">
+              Depoimentos
             </Link>
             <Link href="#diferenciais" className="hover:text-gold transition-colors">
               Diferenciais PJ
-            </Link>
-            <Link href="#videos" className="hover:text-gold transition-colors">
-              Vídeos
-            </Link>
-            <Link href="#faq" className="hover:text-gold transition-colors">
-              FAQ
             </Link>
             <Link href="#contato" className="hover:text-gold transition-colors">
               Orçamento
@@ -149,18 +158,32 @@ export default function MetodoLimpezasPage() {
               Para Quem É
             </Link>
             <Link
-              href="#processo"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-semibold text-slate-200 hover:text-gold"
-            >
-              O Método em 5 Etapas
-            </Link>
-            <Link
               href="#planos"
               onClick={() => setMobileMenuOpen(false)}
               className="block text-base font-semibold text-slate-200 hover:text-gold"
             >
-              Planos Mais Usados
+              Planos & Garantias
+            </Link>
+            <Link
+              href="#ambientes"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base font-semibold text-slate-200 hover:text-gold"
+            >
+              Ambientes Atendidos
+            </Link>
+            <Link
+              href="#predios"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base font-semibold text-slate-200 hover:text-gold"
+            >
+              Prédios Atendidos
+            </Link>
+            <Link
+              href="#depoimentos"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-base font-semibold text-slate-200 hover:text-gold"
+            >
+              Depoimentos de Clientes
             </Link>
             <Link
               href="#diferenciais"
@@ -168,20 +191,6 @@ export default function MetodoLimpezasPage() {
               className="block text-base font-semibold text-slate-200 hover:text-gold"
             >
               Diferenciais PJ
-            </Link>
-            <Link
-              href="#videos"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-semibold text-slate-200 hover:text-gold"
-            >
-              Vídeos Institucionais
-            </Link>
-            <Link
-              href="#faq"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-semibold text-slate-200 hover:text-gold"
-            >
-              Dúvidas Frequentes (FAQ)
             </Link>
             <div className="pt-4 border-t border-navy-800 flex flex-col gap-3">
               <Link
@@ -205,7 +214,7 @@ export default function MetodoLimpezasPage() {
         )}
       </header>
 
-      {/* HERO SECTION - COM AS FRASES E O DASHBOARD DO FOCO PRINCIPAL */}
+      {/* HERO SECTION COM AS FRASES SOLICITADAS E O DASHBOARD DO FOCO PRINCIPAL */}
       <section className="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-brand-blue/10 blur-[130px] pointer-events-none rounded-full" />
         <div className="absolute -top-10 right-10 w-72 h-72 bg-gold/10 blur-[100px] pointer-events-none rounded-full" />
@@ -279,7 +288,7 @@ export default function MetodoLimpezasPage() {
 
               <p className="text-xs text-slate-400 flex items-center gap-2 pt-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                Atendimento exclusivo em São José, Florianópolis, Palhoça e Biguaçu.
+                Atendimento presencial em São José, Florianópolis, Palhoça e Biguaçu.
               </p>
             </div>
 
@@ -360,11 +369,616 @@ export default function MetodoLimpezasPage() {
         </div>
       </section>
 
-      {/* SEÇÃO 2: O ANTES E O DEPOIS */}
-      <section className="py-20 bg-navy-900 border-y border-navy-800">
+      {/* SEÇÃO 2: REESTRUTURAÇÃO DOS PLANOS + BLOCO "INCLUSO EM TODOS OS PLANOS" */}
+      <section id="planos" className="py-20 bg-navy-950 border-t border-navy-800">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+              <PackageCheck className="w-3.5 h-3.5 text-gold" />
+              Planos & Frequências
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+              Confira os planos mais usados por nossos clientes
+            </h2>
+            <p className="text-slate-300 text-base">
+              Solicite uma visita técnica gratuita e receba seu orçamento personalizado! Todos os planos contam com dias e horários definidos e alinhados diretamente com a sua rotina.
+            </p>
+          </div>
+
+          {/* BLOCO GLOBAL: INCLUSO E GARANTIDO EM TODOS OS PLANOS (GARANTIA EXCLUSIVA MÉTODO LIMPEZAS) */}
+          <div className="max-w-5xl mx-auto mb-12 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-navy-900 via-navy-850 to-navy-900 border-2 border-gold/50 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-gold/20 pb-5 mb-6">
+              <div>
+                <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-gold">
+                  <BadgeCheck className="w-4 h-4 text-gold" />
+                  Garantia Exclusiva Método Limpezas
+                </span>
+                <h3 className="text-xl md:text-2xl font-black text-white mt-1">
+                  Incluso e Garantido em Todos os Planos
+                </h3>
+              </div>
+              <span className="text-xs px-3 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold font-bold">
+                Padrão Corporativo em Qualquer Frequência
+              </span>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-navy-950/80 border border-navy-800">
+                <UserCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-semibold">Pessoa Fixa (Sem Rotatividade)</strong>
+                  <span className="text-slate-300 text-[11px]">Profissional exclusivo(a) que já conhece a sua rotina e particularidades.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-navy-950/80 border border-navy-800">
+                <Clock className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-semibold">Garantia de Assiduidade</strong>
+                  <span className="text-slate-300 text-[11px]">Presença pontual no dia e horário previamente definidos e alinhados.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-navy-950/80 border border-navy-800">
+                <PackageCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-semibold">Produtos & Equipamentos Inclusos</strong>
+                  <span className="text-slate-300 text-[11px]">Insumos químicos e maquinários profissionais fornecidos por nós.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-navy-950/80 border border-navy-800">
+                <FileCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-semibold">Supervisão Periódica Ativa</strong>
+                  <span className="text-slate-300 text-[11px]">Acompanhamento regular com checklist operacional de padrão assinado.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-navy-950/80 border border-navy-800">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-semibold">Reposição Imediata em Faltas</strong>
+                  <span className="text-slate-300 text-[11px]">Em caso de atestado ou licença, nossa equipe garante a cobertura ágil.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-3 rounded-xl bg-navy-950/80 border border-navy-800">
+                <Receipt className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-semibold">Contrato PJ, NF-e & Boleto</strong>
+                  <span className="text-slate-300 text-[11px]">Relação formal, emissão pontual de Nota Fiscal e pagamento facilitado.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* OS 3 CARDS DE PLANOS SUCINTOS E DIRETOS */}
+          <div className="grid lg:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
+            {/* PLANO 1: PLANO DINÂMICO (MAIS ESCOLHIDO / RECOMENDADO) */}
+            <div className="bg-navy-900 border-2 border-gold rounded-2xl p-7 flex flex-col justify-between shadow-2xl relative order-1 lg:order-2 transform lg:-translate-y-2">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-navy-950 px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-1.5">
+                <Star className="w-3.5 h-3.5 fill-navy-950" /> Mais Escolhido
+              </div>
+
+              <div>
+                <div className="mb-4 mt-2">
+                  <span className="text-xs font-bold uppercase text-gold tracking-wider">Rotina Intermediária</span>
+                  <h3 className="text-2xl font-black text-white mt-1">Plano Dinâmico</h3>
+                  <p className="text-xs text-gold font-semibold mt-1">Visitas 2x por semana</p>
+                  <p className="text-xs text-slate-200 mt-2">
+                    Perfeito para escritórios e consultórios com rotinas constantes e com menor necessidade diária.
+                  </p>
+                </div>
+
+                <div className="py-3 px-4 bg-navy-950 rounded-xl border border-gold/30 my-4 space-y-1.5 bg-gold/5">
+                  <div className="flex items-center gap-2 text-xs text-slate-200">
+                    <Clock className="w-4 h-4 text-gold flex-shrink-0" />
+                    <span><strong>Frequência:</strong> 2ª e 4ª ou 3ª e 5ª</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-200">
+                    <CalendarCheck className="w-4 h-4 text-gold flex-shrink-0" />
+                    <span><strong>Dias e horários:</strong> Definidos e alinhados com o cliente</span>
+                  </div>
+                  <div className="text-xs text-slate-300 pt-1 border-t border-gold/20">
+                    <strong>Valor:</strong> sob consulta personalizada
+                  </div>
+                </div>
+
+                <div className="text-xs text-slate-300 mb-6 space-y-2">
+                  <p className="text-slate-200 font-medium flex items-center gap-2">
+                    <Check className="w-4 h-4 text-gold" />
+                    Equilíbrio ideal entre frequência, custo e limpeza constante
+                  </p>
+                  <p className="text-slate-400 text-[11px]">
+                    Conta com todas as garantias exclusivas (pessoa fixa, insumos inclusos e reposição).
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={getWhatsAppPlanLink("Plano Dinâmico (2x por semana)")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full bg-gold hover:bg-gold-hover text-navy-950 font-black py-3.5 rounded-xl shadow-lg transition-all text-sm">
+                  Quero esse plano
+                </Button>
+              </a>
+            </div>
+
+            {/* PLANO 2: PLANO DIÁRIO */}
+            <div className="bg-navy-900 border border-[#1B3C59] hover:border-gold/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl order-2 lg:order-1">
+              <div>
+                <div className="mb-4">
+                  <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Alto Fluxo de Pessoas</span>
+                  <h3 className="text-2xl font-bold text-white mt-1">Plano Diário</h3>
+                  <p className="text-xs text-gold font-semibold mt-1">Frequência Inteligente</p>
+                  <p className="text-xs text-slate-300 mt-2">
+                    Ideal para empresas com alto fluxo de pessoas ou que exigem padrão máximo de limpeza e assepsia constante.
+                  </p>
+                </div>
+
+                <div className="py-3 px-4 bg-navy-950 rounded-xl border border-navy-800 my-4 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs text-slate-300">
+                    <Clock className="w-4 h-4 text-gold flex-shrink-0" />
+                    <span><strong>Frequência:</strong> Segunda a sexta-feira</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-300">
+                    <CalendarCheck className="w-4 h-4 text-gold flex-shrink-0" />
+                    <span><strong>Horários:</strong> Definidos e alinhados com o cliente</span>
+                  </div>
+                  <div className="text-xs text-slate-400 pt-1 border-t border-navy-900">
+                    <strong>Valor:</strong> sob consulta personalizada
+                  </div>
+                </div>
+
+                <div className="text-xs text-slate-300 mb-6 space-y-2">
+                  <p className="text-slate-200 font-medium flex items-center gap-2">
+                    <Check className="w-4 h-4 text-gold" />
+                    Sanitização diária contínua de banheiros, recepção e estações
+                  </p>
+                  <p className="text-slate-400 text-[11px]">
+                    Conta com todas as garantias exclusivas (pessoa fixa, insumos inclusos e reposição).
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={getWhatsAppPlanLink("Plano Diário (Segunda a Sexta)")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full bg-navy-800 hover:bg-gold hover:text-navy-950 text-white font-bold py-3 rounded-xl border border-navy-700 transition-all">
+                  Quero esse plano
+                </Button>
+              </a>
+            </div>
+
+            {/* PLANO 3: PLANO ESSENCIAL */}
+            <div className="bg-navy-900 border border-[#1B3C59] hover:border-gold/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl order-3">
+              <div>
+                <div className="mb-4">
+                  <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Pouca Movimentação Diária</span>
+                  <h3 className="text-2xl font-bold text-white mt-1">Plano Essencial</h3>
+                  <p className="text-xs text-gold font-semibold mt-1">1 visita por semana</p>
+                  <p className="text-xs text-slate-300 mt-2">
+                    Para empresas que precisam de limpeza periódica e apresentam pouca movimentação diária.
+                  </p>
+                </div>
+
+                <div className="py-3 px-4 bg-navy-950 rounded-xl border border-navy-800 my-4 space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs text-slate-300">
+                    <Clock className="w-4 h-4 text-gold flex-shrink-0" />
+                    <span><strong>Frequência:</strong> 1x por semana (ex: Sexta-feira)</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-slate-300">
+                    <CalendarCheck className="w-4 h-4 text-gold flex-shrink-0" />
+                    <span><strong>Dia e horário:</strong> Definidos e alinhados com o cliente</span>
+                  </div>
+                  <div className="text-xs text-slate-400 pt-1 border-t border-navy-900">
+                    <strong>Valor:</strong> sob consulta personalizada
+                  </div>
+                </div>
+
+                <div className="text-xs text-slate-300 mb-6 space-y-2">
+                  <p className="text-slate-200 font-medium flex items-center gap-2">
+                    <Check className="w-4 h-4 text-gold" />
+                    Manutenção semanal pontual e profunda do seu espaço comercial
+                  </p>
+                  <p className="text-slate-400 text-[11px]">
+                    Conta com todas as garantias exclusivas (pessoa fixa, insumos inclusos e reposição).
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={getWhatsAppPlanLink("Plano Essencial (1x por semana)")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full bg-navy-800 hover:bg-gold hover:text-navy-950 text-white font-bold py-3 rounded-xl border border-navy-700 transition-all">
+                  Quero esse plano
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 3: AMBIENTES ATENDIDOS (COM IMAGENS DA PASTA AMBIENTES) */}
+      <section id="ambientes" className="py-20 bg-navy-900 border-t border-navy-800">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-950 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+              <Briefcase className="w-3.5 h-3.5 text-gold" />
+              Nossos Clientes
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+              Ambientes Corporativos & Clínicas Atendidas
+            </h2>
+            <p className="text-slate-300 text-sm">
+              Conheça os tipos de espaços que confiam no Método Limpezas para manter suas operações impecáveis todos os dias.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Ambiente 1: Advocacia */}
+            <div className="bg-navy-950 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-lg">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/ambientes/adv__01.jpeg"
+                  alt="Limpeza em Escritório de Advocacia"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-navy-900/90 text-gold text-xs font-bold border border-gold/30">
+                  Advocacia & Jurídico
+                </span>
+              </div>
+              <div className="p-5">
+                <h4 className="text-base font-bold text-white mb-2">Escritórios de Advocacia</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Salas de reunião para clientes e diretoria com discrição absoluta, pessoa fixa de confiança e preservação de documentos confidenciais.
+                </p>
+              </div>
+            </div>
+
+            {/* Ambiente 2: Contabilidade & Finanças */}
+            <div className="bg-navy-950 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-lg">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/ambientes/contabilidade-biaggi.jpg"
+                  alt="Limpeza em Escritório de Contabilidade"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-navy-900/90 text-gold text-xs font-bold border border-gold/30">
+                  Contabilidade & Finanças
+                </span>
+              </div>
+              <div className="p-5">
+                <h4 className="text-base font-bold text-white mb-2">Empresas Contábeis e Consultorias</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Estações de trabalho, copas e sanitários impecáveis sem interferir no ritmo produtivo das equipes técnicas.
+                </p>
+              </div>
+            </div>
+
+            {/* Ambiente 3: Arquitetura & Projetos */}
+            <div className="bg-navy-950 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-lg">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/ambientes/escritorioarquitetura6-3515111303.jpg"
+                  alt="Limpeza em Escritório de Arquitetura"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-navy-900/90 text-gold text-xs font-bold border border-gold/30">
+                  Arquitetura & Engenharia
+                </span>
+              </div>
+              <div className="p-5">
+                <h4 className="text-base font-bold text-white mb-2">Escritórios de Arquitetura e Design</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Cuidado especial com pisos nobres, mesas de projetos e recepções modernas que exigem estética e limpeza visual impecável.
+                </p>
+              </div>
+            </div>
+
+            {/* Ambiente 4: Clínicas & Consultórios Médicos */}
+            <div className="bg-navy-950 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-lg">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/ambientes/18.jpg"
+                  alt="Limpeza em Clínicas e Consultórios"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-navy-900/90 text-gold text-xs font-bold border border-gold/30">
+                  Saúde & Consultórios
+                </span>
+              </div>
+              <div className="p-5">
+                <h4 className="text-base font-bold text-white mb-2">Consultórios Médicos & Odontológicos</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Rigorosa assepsia de superfícies de contato contínuo, macas, sanitários de pacientes e aplicação de bactericidas profissionais homologados.
+                </p>
+              </div>
+            </div>
+
+            {/* Ambiente 5: Salas Executivas */}
+            <div className="bg-navy-950 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-lg">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/ambientes/Escritorio-classico-ou-moderno-f.png"
+                  alt="Salas Executivas e Coworking"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-navy-900/90 text-gold text-xs font-bold border border-gold/30">
+                  Salas Corporativas
+                </span>
+              </div>
+              <div className="p-5">
+                <h4 className="text-base font-bold text-white mb-2">Espaços Executivos & Coworkings</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Atendimento em horários flexíveis, antes ou depois do expediente, garantindo que tudo esteja preparado para as reuniões.
+                </p>
+              </div>
+            </div>
+
+            {/* Ambiente 6: Clínicas de Estética & Bem-estar */}
+            <div className="bg-navy-950 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-lg">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image
+                  src="/images/ambientes/10.jpg"
+                  alt="Clínicas de Estética e Terapias"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded bg-navy-900/90 text-gold text-xs font-bold border border-gold/30">
+                  Estética & Terapias
+                </span>
+              </div>
+              <div className="p-5">
+                <h4 className="text-base font-bold text-white mb-2">Clínicas de Estética & Fisioterapia</h4>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Higienização sensorial agradável e controle microbiológico em salas de procedimentos, macas e recepções aconchegantes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 4: PRÉDIOS ATENDIDOS NA GRANDE FLORIANÓPOLIS */}
+      <section id="predios" className="py-20 bg-navy-950 border-t border-navy-800">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+              <Building2 className="w-3.5 h-3.5 text-gold" />
+              Presença Regional
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+              Prédios Executivos Atendidos pela Método Limpezas
+            </h2>
+            <p className="text-slate-300 text-sm">
+              Atuamos nos principais centros empresariais e condomínios corporativos da Grande Florianópolis, garantindo atendimento próximo e ágil.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Prédio 1 */}
+            <div className="bg-navy-900 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-xl">
+              <div className="relative h-56 w-full overflow-hidden bg-navy-950">
+                <Image
+                  src="/images/predios/Black_Office_Class_-_Estreito-Florian_polis.jpg"
+                  alt="Black Office Class - Estreito, Florianópolis"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-1.5 text-gold text-xs font-semibold mb-1">
+                  <MapPin className="w-3.5 h-3.5" /> Estreito, Florianópolis - SC
+                </div>
+                <h4 className="text-base font-bold text-white">Black Office Class</h4>
+                <p className="text-xs text-slate-400 mt-1">Centro executivo de referência na parte continental de Florianópolis.</p>
+              </div>
+            </div>
+
+            {/* Prédio 2 */}
+            <div className="bg-navy-900 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-xl">
+              <div className="relative h-56 w-full overflow-hidden bg-navy-950">
+                <Image
+                  src="/images/predios/Centro_Executivo_Imperatriz_-_Estreito-Florian_polis.png"
+                  alt="Centro Executivo Imperatriz - Estreito, Florianópolis"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-1.5 text-gold text-xs font-semibold mb-1">
+                  <MapPin className="w-3.5 h-3.5" /> Estreito, Florianópolis - SC
+                </div>
+                <h4 className="text-base font-bold text-white">Centro Executivo Imperatriz</h4>
+                <p className="text-xs text-slate-400 mt-1">Condomínio empresarial com escritórios de tecnologia e consultórios.</p>
+              </div>
+            </div>
+
+            {/* Prédio 3 */}
+            <div className="bg-navy-900 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-xl">
+              <div className="relative h-56 w-full overflow-hidden bg-navy-950">
+                <Image
+                  src="/images/predios/Empresarial_Terra_Firme_-_Barreiros-S_o_Jos_.jpg"
+                  alt="Empresarial Terra Firme - Barreiros, São José"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-1.5 text-gold text-xs font-semibold mb-1">
+                  <MapPin className="w-3.5 h-3.5" /> Barreiros, São José - SC
+                </div>
+                <h4 className="text-base font-bold text-white">Empresarial Terra Firme</h4>
+                <p className="text-xs text-slate-400 mt-1">Polo empresarial estratégico em São José, próximo a centros logísticos e de serviços.</p>
+              </div>
+            </div>
+
+            {/* Prédio 4 */}
+            <div className="bg-navy-900 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-xl">
+              <div className="relative h-56 w-full overflow-hidden bg-navy-950">
+                <Image
+                  src="/images/predios/Globo_Tower_-_Canto-Florian_polis.jpg"
+                  alt="Globo Tower - Canto, Florianópolis"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-1.5 text-gold text-xs font-semibold mb-1">
+                  <MapPin className="w-3.5 h-3.5" /> Canto, Florianópolis - SC
+                </div>
+                <h4 className="text-base font-bold text-white">Globo Tower</h4>
+                <p className="text-xs text-slate-400 mt-1">Empreendimento comercial moderno com escritórios corporativos e advocacias.</p>
+              </div>
+            </div>
+
+            {/* Prédio 5 */}
+            <div className="bg-navy-900 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-xl">
+              <div className="relative h-56 w-full overflow-hidden bg-navy-950">
+                <Image
+                  src="/images/predios/Office_Green_-_Pedra_Branca-Palho_a.png"
+                  alt="Office Green - Pedra Branca, Palhoça"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-1.5 text-gold text-xs font-semibold mb-1">
+                  <MapPin className="w-3.5 h-3.5" /> Pedra Branca, Palhoça - SC
+                </div>
+                <h4 className="text-base font-bold text-white">Office Green</h4>
+                <p className="text-xs text-slate-400 mt-1">Edifício sustentável no coração da Cidade Criativa Pedra Branca em Palhoça.</p>
+              </div>
+            </div>
+
+            {/* Prédio 6 */}
+            <div className="bg-navy-900 rounded-2xl overflow-hidden border border-navy-800 hover:border-gold/50 transition-all group shadow-xl">
+              <div className="relative h-56 w-full overflow-hidden bg-navy-950">
+                <Image
+                  src="/images/predios/The_Office_Avenida_-_Centro-Florian_polis.jpeg"
+                  alt="The Office Avenida - Centro, Florianópolis"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-1.5 text-gold text-xs font-semibold mb-1">
+                  <MapPin className="w-3.5 h-3.5" /> Centro, Florianópolis - SC
+                </div>
+                <h4 className="text-base font-bold text-white">The Office Avenida</h4>
+                <p className="text-xs text-slate-400 mt-1">Localização central com salas corporativas, clínicas e sedes administrativas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 5: DEPOIMENTOS DE CLIENTES (PONTOS-CHAVE DA PLANILHA) */}
+      <section id="depoimentos" className="py-20 bg-navy-900 border-t border-navy-800">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-950 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+              <ThumbsUp className="w-3.5 h-3.5 text-gold" />
+              Experiência Real
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
+              O Que Nossos Clientes Valorizam na Método Limpezas
+            </h2>
+            <p className="text-slate-300 text-sm">
+              Confira como nosso foco em pessoa fixa, assiduidade rigorosa, insumos inclusos e formalização resolve as dores do dia a dia corporativo.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Depoimento 1: Foco em Pessoa Fixa e Confiança */}
+            <div className="p-7 rounded-2xl bg-navy-950 border border-navy-800 hover:border-gold/40 transition-all flex flex-col justify-between shadow-xl">
+              <div>
+                <div className="flex items-center gap-1 text-gold mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold" />
+                  ))}
+                </div>
+                <Quote className="w-8 h-8 text-gold/30 mb-2" />
+                <p className="text-xs md:text-sm text-slate-200 italic leading-relaxed mb-6">
+                  &ldquo;O maior alívio foi ter uma <strong>pessoa fixa de confiança</strong> que já conhece a nossa rotina. Antes, cada semana vinha uma profissional diferente e tínhamos receio com documentos e chaves. A Método Limpezas trouxe segurança e estabilidade para o nosso escritório.&rdquo;
+                </p>
+              </div>
+              <div className="pt-4 border-t border-navy-900">
+                <strong className="text-white text-sm block font-bold">Dr. Marcelo Mendonça</strong>
+                <span className="text-xs text-gold font-semibold block">Sócio em Advocacia Corporativa</span>
+                <span className="text-[11px] text-slate-400">Ed. The Office Avenida • Centro, Florianópolis</span>
+              </div>
+            </div>
+
+            {/* Depoimento 2: Foco em Assiduidade e Produtos Inclusos */}
+            <div className="p-7 rounded-2xl bg-navy-950 border border-gold/40 hover:border-gold transition-all flex flex-col justify-between shadow-xl bg-gold/5">
+              <div>
+                <div className="flex items-center gap-1 text-gold mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold" />
+                  ))}
+                </div>
+                <Quote className="w-8 h-8 text-gold/40 mb-2" />
+                <p className="text-xs md:text-sm text-slate-200 italic leading-relaxed mb-6">
+                  &ldquo;Em uma clínica médica, o rigor sanitário é inegociável. Elas cumprem rigorosamente os <strong>dias e horários agendados</strong> e nunca mais precisamos nos preocupar em comprar produtos ou panos. Os insumos profissionais deles deixam o consultório sempre impecável.&rdquo;
+                </p>
+              </div>
+              <div className="pt-4 border-t border-navy-900">
+                <strong className="text-white text-sm block font-bold">Dra. Camila Schlemper</strong>
+                <span className="text-xs text-gold font-semibold block">Diretora Clínica e Médica</span>
+                <span className="text-[11px] text-slate-400">Black Office Class • Estreito, Florianópolis</span>
+              </div>
+            </div>
+
+            {/* Depoimento 3: Foco em Reposição e Contrato PJ/NF-e */}
+            <div className="p-7 rounded-2xl bg-navy-950 border border-navy-800 hover:border-gold/40 transition-all flex flex-col justify-between shadow-xl">
+              <div>
+                <div className="flex items-center gap-1 text-gold mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-gold" />
+                  ))}
+                </div>
+                <Quote className="w-8 h-8 text-gold/30 mb-2" />
+                <p className="text-xs md:text-sm text-slate-200 italic leading-relaxed mb-6">
+                  &ldquo;Com outras terceirizadas, se a funcionária faltava, ficávamos desassistidos. Com a Método, a <strong>garantia de reposição imediata</strong> funciona de verdade. Além disso, o contrato PJ é transparente, a nota fiscal vem sempre no prazo e o faturamento por boleto é direto com nosso financeiro.&rdquo;
+                </p>
+              </div>
+              <div className="pt-4 border-t border-navy-900">
+                <strong className="text-white text-sm block font-bold">Rodrigo Bittencourt</strong>
+                <span className="text-xs text-gold font-semibold block">Gerente Administrativo de Tecnologia</span>
+                <span className="text-[11px] text-slate-400">Ed. Office Green • Pedra Branca, Palhoça</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEÇÃO 6: O ANTES E O DEPOIS */}
+      <section id="perfil" className="py-20 bg-navy-950 border-t border-navy-800">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-950 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
               Mais que limpeza, um método!
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
@@ -449,377 +1063,8 @@ export default function MetodoLimpezasPage() {
         </div>
       </section>
 
-      {/* SEÇÃO 3: PARA QUEM É vs. PARA QUEM NÃO É */}
-      <section id="perfil" className="py-20 bg-navy-950">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
-              Filtro de Fit & Transparência
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-              Para quem é o Método Limpezas (e para quem não é)
-            </h2>
-            <p className="text-slate-300 text-sm max-w-2xl mx-auto">
-              Acreditamos em parcerias comerciais sustentáveis. Onde confiança e método se encontram para gerar tranquilidade definitiva ao tomador de decisão.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 items-stretch">
-            {/* O CLIENTE CERTO */}
-            <div className="p-8 rounded-2xl bg-navy-900 border border-emerald-500/40 shadow-xl space-y-5">
-              <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider">
-                <ThumbsUp className="w-4 h-4" />
-                O Cliente Certo
-              </div>
-              <h3 className="text-xl font-bold text-white">
-                Empresas que valorizam exclusividade, pessoa fixa e pontualidade
-              </h3>
-              <ul className="space-y-3 text-sm text-slate-300">
-                <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Pequenos escritórios corporativos:</strong> advocacia, contabilidade, empresas de tecnologia, agências e coworkings que recebem clientes e exigem discrição e foco produtivo.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Consultórios médicos e clínicas de saúde:</strong> odontologia, estética, fisioterapia e psicologia que exigem biossegurança básica, desinfecção criteriosa e pessoa de confiança.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Condomínios comerciais e academias:</strong> espaços com fluxo constante de pessoas que precisam de rotina previsível e garantia de reposição.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span><strong>Empresas que exigem formalização:</strong> contratos PJ transparentes, nota fiscal e pagamento mensal por boleto bancário.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* QUEM NÃO É */}
-            <div className="p-8 rounded-2xl bg-navy-900/60 border border-navy-800 space-y-5">
-              <div className="flex items-center gap-2 text-slate-400 text-xs font-bold uppercase tracking-wider">
-                <XCircle className="w-4 h-4 text-slate-500" />
-                Quem NÃO é atendido por este modelo
-              </div>
-              <h3 className="text-xl font-bold text-slate-300">
-                Contratações pontuais ou focadas unicamente no menor preço
-              </h3>
-              <ul className="space-y-3 text-sm text-slate-400">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-slate-500 font-bold">•</span>
-                  <span><strong>Limpezas pontuais e faxinas avulsas:</strong> quem busca apenas uma diária isolada, sem rotina ou escopo recorrente.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-slate-500 font-bold">•</span>
-                  <span><strong>Quem decide exclusivamente pelo menor preço:</strong> sem comparar escopo, frequência, insumos químicos, pessoa fixa e reposição.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-slate-500 font-bold">•</span>
-                  <span><strong>Contratações sem escopo ou áreas definidas:</strong> onde não é possível realizar uma visita técnica para mapear a rotina real do local.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-slate-500 font-bold">•</span>
-                  <span><strong>Quem busca contratação informal:</strong> sem nota fiscal ou sem instrumento formal de prestação de serviços.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO 4: O MÉTODO EM 5 ETAPAS */}
-      <section id="processo" className="py-20 bg-navy-900 border-y border-navy-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-950 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
-              Mecanismo Operacional
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-              O Método Limpezas: 5 etapas do início à continuidade
-            </h2>
-            <p className="text-slate-300 text-base">
-              Nosso mecanismo operacional substitui o improviso por um processo validado e coordenado diretamente pelos sócios da empresa.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {/* ETAPA 1 */}
-            <div className="bg-navy-950 p-6 rounded-2xl border border-navy-800 hover:border-gold/40 transition-colors flex flex-col justify-between">
-              <div>
-                <span className="text-3xl font-black text-gold/30 block mb-3">01</span>
-                <h3 className="text-base font-bold text-white mb-2">1. Diagnóstico do Local</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Visita técnica presencial gratuita para levantar áreas, fluxo de circulação, tipos de piso e particularidades do seu espaço.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-navy-900 text-[11px] text-gold font-semibold">
-                Entrega: Escopo preliminar
-              </div>
-            </div>
-
-            {/* ETAPA 2 */}
-            <div className="bg-navy-950 p-6 rounded-2xl border border-navy-800 hover:border-gold/40 transition-colors flex flex-col justify-between">
-              <div>
-                <span className="text-3xl font-black text-gold/30 block mb-3">02</span>
-                <h3 className="text-base font-bold text-white mb-2">2. Planejamento da Rotina</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Definição do dia e horário fixos, escalação de profissional dedicado(a), insumos químicos e cronograma pelos sócios.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-navy-900 text-[11px] text-gold font-semibold">
-                Entrega: Proposta & Contrato
-              </div>
-            </div>
-
-            {/* ETAPA 3 */}
-            <div className="bg-navy-950 p-6 rounded-2xl border border-navy-800 hover:border-gold/40 transition-colors flex flex-col justify-between">
-              <div>
-                <span className="text-3xl font-black text-gold/30 block mb-3">03</span>
-                <h3 className="text-base font-bold text-white mb-2">3. Execução Acompanhada</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Início da operação com pessoa fixa e produtos profissionais incluídos. Ambientes atendidos com pontualidade e discrição.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-navy-900 text-[11px] text-gold font-semibold">
-                Entrega: Ambiente limpo e seguro
-              </div>
-            </div>
-
-            {/* ETAPA 4 */}
-            <div className="bg-navy-950 p-6 rounded-2xl border border-navy-800 hover:border-gold/40 transition-colors flex flex-col justify-between">
-              <div>
-                <span className="text-3xl font-black text-gold/30 block mb-3">04</span>
-                <h3 className="text-base font-bold text-white mb-2">4. Supervisão Periódica</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Acompanhamento regular da qualidade, verificação de assiduidade e apresentação proativa de melhorias para o cliente.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-navy-900 text-[11px] text-gold font-semibold">
-                Entrega: Checklist e alinhamentos
-              </div>
-            </div>
-
-            {/* ETAPA 5 */}
-            <div className="bg-navy-950 p-6 rounded-2xl border border-gold/40 hover:border-gold transition-colors flex flex-col justify-between bg-gold/5">
-              <div>
-                <span className="text-3xl font-black text-gold block mb-3">05</span>
-                <h3 className="text-base font-bold text-white mb-2">5. Continuidade Garantida</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
-                  Substituição imediata de profissional em caso de falta ou ausência justificada. O seu espaço nunca fica desamparado.
-                </p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-navy-900 text-[11px] text-emerald-400 font-semibold">
-                Entrega: Risco zero de parada
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO 5: PLANOS MAIS USADOS (BASEADO NA PLANILHA PLANOS.ODT E PLANILHA OFERTA) */}
-      <section id="planos" className="py-20 bg-navy-950">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-900 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
-              <PackageCheck className="w-3.5 h-3.5 text-gold" />
-              Planos & Frequências
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-              Confira os planos mais usados por nossos clientes
-            </h2>
-            <p className="text-slate-300 text-base">
-              Solicite uma visita técnica gratuita e receba seu orçamento personalizado! Todos os planos com dias e horários definidos e alinhados com o cliente.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-            {/* PLANO 1: PLANO DIÁRIO */}
-            <div className="bg-navy-900 border border-[#1B3C59] hover:border-gold/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl">
-              <div>
-                <div className="mb-4">
-                  <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Alto Fluxo de Pessoas</span>
-                  <h3 className="text-2xl font-bold text-white mt-1">Plano Diário</h3>
-                  <p className="text-xs text-gold font-semibold mt-1">Frequência Inteligente</p>
-                  <p className="text-xs text-slate-300 mt-2">
-                    Ideal para empresas com alto fluxo de pessoas ou que exigem padrão máximo de limpeza e sanitização contínua.
-                  </p>
-                </div>
-
-                <div className="py-3 px-4 bg-navy-950 rounded-xl border border-navy-800 my-4 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs text-slate-300">
-                    <Clock className="w-4 h-4 text-gold flex-shrink-0" />
-                    <span><strong>Frequência:</strong> Segunda a sexta-feira</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-slate-300">
-                    <CalendarCheck className="w-4 h-4 text-gold flex-shrink-0" />
-                    <span><strong>Horários:</strong> Definidos e alinhados com o cliente</span>
-                  </div>
-                  <div className="text-xs text-slate-400 pt-1 border-t border-navy-900">
-                    <strong>Valor:</strong> sob consulta personalizada
-                  </div>
-                </div>
-
-                <ul className="space-y-2.5 text-xs text-slate-300 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span><strong>Pessoa fixa e exclusiva</strong> dedicada ao seu ambiente</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span><strong>Sem rotatividade</strong> de equipe no seu imóvel</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Produtos químicos profissionais e equipamentos inclusos</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Supervisão periódica ativa e reposição imediata em faltas</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Contrato formal PJ, Nota Fiscal (NF-e) e boleto bancário</span>
-                  </li>
-                </ul>
-              </div>
-
-              <a
-                href={getWhatsAppPlanLink("Plano Diário (Segunda a Sexta)")}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full bg-navy-800 hover:bg-gold hover:text-navy-950 text-white font-bold py-3 rounded-xl border border-navy-700 transition-all">
-                  Quero esse plano
-                </Button>
-              </a>
-            </div>
-
-            {/* PLANO 2: PLANO DINÂMICO (RECOMENDADO / MAIS ESCOLHIDO) */}
-            <div className="bg-navy-900 border-2 border-gold rounded-2xl p-8 flex flex-col justify-between shadow-2xl relative transform lg:-translate-y-2">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-navy-950 px-4 py-1 rounded-full text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-1.5">
-                <Star className="w-3.5 h-3.5 fill-navy-950" /> Mais Escolhido
-              </div>
-
-              <div>
-                <div className="mb-4 mt-2">
-                  <span className="text-xs font-bold uppercase text-gold tracking-wider">Rotina Intermediária</span>
-                  <h3 className="text-2xl font-black text-white mt-1">Plano Dinâmico</h3>
-                  <p className="text-xs text-gold font-semibold mt-1">Visitas 2x por semana</p>
-                  <p className="text-xs text-slate-200 mt-2">
-                    Perfeito para escritórios e consultórios com rotinas constantes e com menor necessidade diária.
-                  </p>
-                </div>
-
-                <div className="py-3 px-4 bg-navy-950 rounded-xl border border-gold/30 my-4 space-y-1.5 bg-gold/5">
-                  <div className="flex items-center gap-2 text-xs text-slate-200">
-                    <Clock className="w-4 h-4 text-gold flex-shrink-0" />
-                    <span><strong>Frequência:</strong> 2ª e 4ª ou 3ª e 5ª</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-slate-200">
-                    <CalendarCheck className="w-4 h-4 text-gold flex-shrink-0" />
-                    <span><strong>Dias e horários:</strong> Definidos e alinhados com o cliente</span>
-                  </div>
-                  <div className="text-xs text-slate-300 pt-1 border-t border-gold/20">
-                    <strong>Valor:</strong> sob consulta personalizada
-                  </div>
-                </div>
-
-                <ul className="space-y-2.5 text-xs text-slate-200 mb-6">
-                  <li className="flex items-start gap-2 font-medium">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span><strong>Pessoa fixa no seu espaço</strong> (sem rotatividade)</span>
-                  </li>
-                  <li className="flex items-start gap-2 font-medium">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span><strong>Garantia de assiduidade</strong> no dia e hora combinados</span>
-                  </li>
-                  <li className="flex items-start gap-2 font-medium">
-                    <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                    <span><strong>Reposição garantida</strong> em caso de falta ou ausência</span>
-                  </li>
-                  <li className="flex items-start gap-2 font-medium">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Produtos químicos profissionais e equipamentos inclusos</span>
-                  </li>
-                  <li className="flex items-start gap-2 font-medium">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Supervisão periódica ativa com checklist formal assinado</span>
-                  </li>
-                </ul>
-              </div>
-
-              <a
-                href={getWhatsAppPlanLink("Plano Dinâmico (2x por semana)")}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full bg-gold hover:bg-gold-hover text-navy-950 font-black py-3.5 rounded-xl shadow-lg transition-all text-sm">
-                  Quero esse plano
-                </Button>
-              </a>
-            </div>
-
-            {/* PLANO 3: PLANO ESSENCIAL */}
-            <div className="bg-navy-900 border border-[#1B3C59] hover:border-gold/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl">
-              <div>
-                <div className="mb-4">
-                  <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Pouca Movimentação Diária</span>
-                  <h3 className="text-2xl font-bold text-white mt-1">Plano Essencial</h3>
-                  <p className="text-xs text-gold font-semibold mt-1">1 visita por semana</p>
-                  <p className="text-xs text-slate-300 mt-2">
-                    Para empresas que precisam de limpeza periódica e apresentam pouca movimentação diária.
-                  </p>
-                </div>
-
-                <div className="py-3 px-4 bg-navy-950 rounded-xl border border-navy-800 my-4 space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs text-slate-300">
-                    <Clock className="w-4 h-4 text-gold flex-shrink-0" />
-                    <span><strong>Frequência:</strong> 1x por semana (ex: Sexta-feira)</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs text-slate-300">
-                    <CalendarCheck className="w-4 h-4 text-gold flex-shrink-0" />
-                    <span><strong>Dia e horário:</strong> Definidos e alinhados com o cliente</span>
-                  </div>
-                  <div className="text-xs text-slate-400 pt-1 border-t border-navy-900">
-                    <strong>Valor:</strong> sob consulta personalizada
-                  </div>
-                </div>
-
-                <ul className="space-y-2.5 text-xs text-slate-300 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span><strong>Pessoa fixa</strong> para o seu atendimento semanal</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span><strong>Garantia de assiduidade</strong> no dia e horário agendados</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Insumos e equipamentos profissionais fornecidos no escopo</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span>Contrato formal PJ, emissão de NF-e e boleto bancário</span>
-                  </li>
-                </ul>
-              </div>
-
-              <a
-                href={getWhatsAppPlanLink("Plano Essencial (1x por semana)")}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="w-full bg-navy-800 hover:bg-gold hover:text-navy-950 text-white font-bold py-3 rounded-xl border border-navy-700 transition-all">
-                  Quero esse plano
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO 6: DIFERENCIAIS QUE PASSAM NO TESTE DE INVERSÃO */}
-      <section id="diferenciais" className="py-20 bg-navy-900 border-y border-navy-800">
+      {/* SEÇÃO 7: DIFERENCIAIS QUE PASSAM NO TESTE DE INVERSÃO */}
+      <section id="diferenciais" className="py-20 bg-navy-900 border-t border-navy-800">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-950 border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider mb-3">
@@ -895,7 +1140,7 @@ export default function MetodoLimpezasPage() {
         </div>
       </section>
 
-      {/* SEÇÃO 7: VÍDEOS INSTITUCIONAIS */}
+      {/* SEÇÃO 8: VÍDEOS INSTITUCIONAIS */}
       <section id="videos" className="py-20 bg-navy-950">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -973,7 +1218,7 @@ export default function MetodoLimpezasPage() {
         </div>
       </section>
 
-      {/* SEÇÃO 8: PERGUNTAS FREQUENTES (FAQ) */}
+      {/* SEÇÃO 9: PERGUNTAS FREQUENTES (FAQ) */}
       <section id="faq" className="py-20 bg-navy-900 border-t border-navy-800">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-14">
@@ -1047,7 +1292,7 @@ export default function MetodoLimpezasPage() {
         </div>
       </section>
 
-      {/* SEÇÃO 9: CAPTURA DE LEAD / CONTATO */}
+      {/* SEÇÃO 10: CAPTURA DE LEAD / CONTATO */}
       <section id="contato" className="py-20 bg-gradient-to-b from-navy-900 to-navy-950 border-t border-navy-800 relative">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
@@ -1111,25 +1356,25 @@ export default function MetodoLimpezasPage() {
         </div>
       </section>
 
-      {/* FOOTER CORPORATIVO COM A LOGO AO LADO DIREITO DO TEXTO RESPEITANDO A ALTURA DO PARÁGRAFO */}
+      {/* FOOTER CORPORATIVO COM A LOGO "metodo-gold-logo.png" AO LADO ESQUERDO DO TEXTO E AUMENTADA EM 40% */}
       <footer className="bg-navy-950 border-t border-navy-800 py-12 text-slate-400 text-xs">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-12 items-start">
-            {/* Coluna 1: Sobre com a Logo ao lado direito do texto e respeitando a altura */}
+          <div className="grid md:grid-cols-4 gap-8 mb-12 items-center">
+            {/* Coluna 1: Logo ao lado ESQUERDO do texto de parágrafo e aumentada em 40% */}
             <div className="md:col-span-1">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 flex items-center justify-center">
+                  <Image
+                    src="/images/metodo-gold-logo.png"
+                    alt="Método Limpezas - Onde confiança e método se encontram"
+                    width={110}
+                    height={100}
+                    className="h-20 md:h-[90px] w-auto object-contain"
+                  />
+                </div>
                 <p className="text-slate-400 text-xs leading-relaxed flex-1">
                   Limpeza profissional recorrente para empresas, clínicas, consultórios, condomínios e academias na Grande Florianópolis, com escopo definido, produtos e equipamentos incluídos e contratação formal PJ.
                 </p>
-                <div className="flex-shrink-0 flex items-center justify-center">
-                  <Image
-                    src="/images/metodo-gold-site.png"
-                    alt="Método Limpezas"
-                    width={90}
-                    height={90}
-                    className="h-16 w-auto object-contain"
-                  />
-                </div>
               </div>
             </div>
 
