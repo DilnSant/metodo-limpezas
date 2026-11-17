@@ -67,70 +67,60 @@ export default function MetodoLimpezasPage() {
         <span className="hidden md:inline text-slate-400 ml-2">| Mais que limpeza, um método!</span>
       </div>
 
-      {/* Header Fixo - Logo aumentada em 40% com metodo-gold-logo.png */}
+      {/* Header Fixo - Logo com slogan e navegação em linha única */}
       <header className="sticky top-0 z-40 bg-navy-900/95 backdrop-blur-md border-b border-navy-800 shadow-xl">
-        <div className="container mx-auto px-4 h-24 flex items-center justify-between">
-          {/* Logo Aumentada em 40% */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative h-20 w-24 flex items-center">
-              <Image
-                src="/images/metodo-gold-logo.png"
-                alt="Método Limpezas - Onde confiança e método se encontram"
-                width={120}
-                height={100}
-                priority
-                className="h-[72px] w-auto object-contain transition-transform group-hover:scale-105"
-              />
-            </div>
-            <div className="hidden sm:block text-left">
-              <span className="block text-lg font-black tracking-tight text-white leading-none">
-                MÉTODO <span className="text-gold">LIMPEZAS</span>
-              </span>
-              <span className="text-[10px] text-slate-400 font-medium tracking-wider uppercase block mt-1">
-                Mais que limpeza, um método!
-              </span>
-            </div>
+        <div className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 h-20 md:h-22 flex items-center justify-between gap-2 lg:gap-4">
+          {/* Logo com Slogan */}
+          <Link href="/" className="flex items-center flex-shrink-0 group">
+            <Image
+              src="/images/logo-com-slogan.png"
+              alt="Método Limpezas - Mais que limpeza, um método!"
+              width={220}
+              height={74}
+              priority
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </Link>
 
-          {/* Navegação Desktop */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-200">
-            <Link href="#perfil" className="hover:text-gold transition-colors">
+          {/* Navegação Desktop em 1 única linha */}
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 text-xs 2xl:text-sm font-semibold text-slate-200 whitespace-nowrap flex-shrink-0">
+            <Link href="#perfil" className="hover:text-gold transition-colors whitespace-nowrap">
               Para Quem É
             </Link>
-            <Link href="#planos" className="hover:text-gold transition-colors">
+            <Link href="#planos" className="hover:text-gold transition-colors whitespace-nowrap">
               Planos & Garantias
             </Link>
-            <Link href="#ambientes" className="hover:text-gold transition-colors">
+            <Link href="#ambientes" className="hover:text-gold transition-colors whitespace-nowrap">
               Ambientes
             </Link>
-            <Link href="#predios" className="hover:text-gold transition-colors">
+            <Link href="#predios" className="hover:text-gold transition-colors whitespace-nowrap">
               Prédios Atendidos
             </Link>
-            <Link href="#depoimentos" className="hover:text-gold transition-colors">
+            <Link href="#depoimentos" className="hover:text-gold transition-colors whitespace-nowrap">
               Depoimentos
             </Link>
-            <Link href="#diferenciais" className="hover:text-gold transition-colors">
+            <Link href="#diferenciais" className="hover:text-gold transition-colors whitespace-nowrap">
               Diferenciais PJ
             </Link>
-            <Link href="#contato" className="hover:text-gold transition-colors">
+            <Link href="#contato" className="hover:text-gold transition-colors whitespace-nowrap">
               Orçamento
             </Link>
           </nav>
 
           {/* Ações Header Desktop */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2 2xl:gap-3 flex-shrink-0 whitespace-nowrap">
             <a
               href={defaultWhatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-bold text-slate-200 hover:text-white px-3 py-2 rounded-lg bg-navy-800 hover:bg-navy-700 border border-navy-700 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-200 hover:text-white px-3 py-2 rounded-lg bg-navy-800 hover:bg-navy-700 border border-navy-700 transition-colors whitespace-nowrap"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-400" />
+              <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
               (48) 98848-2877
             </a>
 
-            <Link href="#contato">
-              <Button className="bg-gold hover:bg-gold-hover text-navy-950 font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg shadow-lg transition-transform active:scale-95">
+            <Link href="#contato" className="whitespace-nowrap">
+              <Button className="bg-gold hover:bg-gold-hover text-navy-950 font-bold text-xs uppercase tracking-wider px-3.5 py-2.5 rounded-lg shadow-lg transition-transform active:scale-95 whitespace-nowrap">
                 Visita Técnica Gratuita
               </Button>
             </Link>
@@ -140,7 +130,7 @@ export default function MetodoLimpezasPage() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-slate-300 hover:text-white focus:outline-none"
+            className="xl:hidden p-2 text-slate-300 hover:text-white focus:outline-none flex-shrink-0"
             aria-label="Abrir Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6 text-gold" /> : <Menu className="w-6 h-6" />}
@@ -149,7 +139,7 @@ export default function MetodoLimpezasPage() {
 
         {/* Menu Mobile */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-navy-900 border-b border-navy-800 px-6 py-6 space-y-4">
+          <div className="xl:hidden bg-navy-900 border-b border-navy-800 px-6 py-6 space-y-4">
             <Link
               href="#perfil"
               onClick={() => setMobileMenuOpen(false)}
