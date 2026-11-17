@@ -10,9 +10,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Método Limpezas | Limpeza Profissional Recorrente para Escritórios e Clínicas",
+  title: "Método Limpezas | Seu ambiente é a nossa especialidade",
   description:
-    "Serviço corporativo de limpeza profissional recorrente para pequenos escritórios, consultórios e clínicas em São José, Florianópolis, Palhoça e Biguaçu - SC. Produtos e equipamentos inclusos, supervisão periódica e reposição garantida.",
+    "Mais que limpeza, um método! Onde confiança e método se encontram. Limpeza profissional recorrente com pessoa fixa, sem rotatividade, produtos inclusos e garantia de assiduidade para escritórios e clínicas na Grande Florianópolis.",
   keywords: [
     "limpeza corporativa",
     "limpeza de escritórios",

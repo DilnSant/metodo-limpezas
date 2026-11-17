@@ -14,8 +14,8 @@ export default function LeadForm({ initialPacote }: { initialPacote?: string }) 
     telefone: "",
     cidade: "São José",
     tipoEspaco: "Pequeno Escritório",
-    frequencia: "2x a 3x por semana",
-    pacote: initialPacote || "Pacote Recomendada (Supervisão + Reposição + Produtos)",
+    frequencia: "2x por semana (dias e horários definidos)",
+    pacote: initialPacote || "Plano Dinâmico (2x por semana - Mais Escolhido)",
     mensagem: "",
   })
 
@@ -41,8 +41,8 @@ export default function LeadForm({ initialPacote }: { initialPacote?: string }) 
 *Telefone/WhatsApp:* ${quoteData.telefone || "Não informado"}
 *Cidade:* ${quoteData.cidade}
 *Tipo de Espaço:* ${quoteData.tipoEspaco}
+*Plano de Interesse:* ${quoteData.pacote}
 *Frequência pretendida:* ${quoteData.frequencia}
-*Pacote de interesse:* ${quoteData.pacote}
 ${quoteData.mensagem ? `*Observações:* ${quoteData.mensagem}` : ""}
 ----------------------------------------
 _Enviado pelo formulário do site metodo-limpezas.com.br_`
@@ -205,34 +205,34 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                Frequência Desejada
-              </label>
-              <select
-                value={quoteData.frequencia}
-                onChange={(e) => setQuoteData({ ...quoteData, frequencia: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-3 py-3 text-xs text-white focus:outline-none transition-colors"
-              >
-                <option value="Diária (Segunda a Sexta)">Diária (Seg a Sex)</option>
-                <option value="2x a 3x por semana">2x a 3x por semana</option>
-                <option value="1x por semana">1x por semana</option>
-                <option value="A definir na avaliação técnica">A definir na visita</option>
-              </select>
-            </div>
-
-            <div>
               <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1">
-                <Layers className="w-3.5 h-3.5 text-gold" /> Pacote
+                <Layers className="w-3.5 h-3.5 text-gold" /> Plano Escolhido
               </label>
               <select
                 value={quoteData.pacote}
                 onChange={(e) => setQuoteData({ ...quoteData, pacote: e.target.value })}
                 className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-3 py-3 text-xs text-white focus:outline-none transition-colors"
               >
-                <option value="Pacote Recomendada (Supervisão + Reposição + Produtos)">Recomendada (Mais Escolhido)</option>
-                <option value="Pacote Essencial (Escopo e Produtos Definidos)">Essencial (Rotina Enxuta)</option>
-                <option value="Pacote Completa (Escopo Ampliado / Alto Fluxo)">Completa (Intensivo)</option>
-                <option value="A definir conforme visita">A definir na avaliação</option>
+                <option value="Plano Dinâmico (2x por semana - Mais Escolhido)">Plano Dinâmico (2x/semana - Recomendado)</option>
+                <option value="Plano Diário (Segunda a Sexta - Frequência Inteligente)">Plano Diário (Seg a Sex)</option>
+                <option value="Plano Essencial (1x por semana - Semanal)">Plano Essencial (1x/semana - Semanal)</option>
+                <option value="A definir na avaliação técnica">A definir na visita</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                Frequência
+              </label>
+              <select
+                value={quoteData.frequencia}
+                onChange={(e) => setQuoteData({ ...quoteData, frequencia: e.target.value })}
+                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-3 py-3 text-xs text-white focus:outline-none transition-colors"
+              >
+                <option value="2x por semana (2ª e 4ª ou 3ª e 5ª - dias e horários definidos)">2x por semana (2ª e 4ª ou 3ª e 5ª)</option>
+                <option value="Diária (Segunda a sexta-feira - horários alinhados)">Diária (Segunda a sexta-feira)</option>
+                <option value="Semanal (1x por semana - dia e horário definidos)">Semanal (1x por semana)</option>
+                <option value="A definir na visita técnica">A definir na visita técnica</option>
               </select>
             </div>
           </div>
@@ -243,7 +243,7 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             </label>
             <textarea
               rows={3}
-              placeholder="Ex.: Metragem aproximada de 100m², 2 banheiros e 1 copa. Gostaria de atendimento no período da manhã..."
+              placeholder="Ex.: Metragem aproximada de 100m², 2 banheiros e 1 copa. Gostaria de atendimento no período da manhã com pessoa fixa..."
               value={quoteData.mensagem}
               onChange={(e) => setQuoteData({ ...quoteData, mensagem: e.target.value })}
               className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
@@ -258,7 +258,7 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             Enviar Solicitação Direto no WhatsApp
           </Button>
           <p className="text-center text-xs text-slate-400">
-            Atendimento B2B humanizado. Seus dados são utilizados exclusivamente para a elaboração do seu orçamento.
+            Atendimento B2B humanizado com pessoa fixa e sem rotatividade. Seus dados são utilizados exclusivamente para a elaboração do seu orçamento.
           </p>
         </form>
       )}
@@ -366,7 +366,7 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             </label>
             <textarea
               rows={3}
-              placeholder="Ex.: Gostaria de avaliar pisos vinílicos, desinfecção de consultórios e banheiros de clientes..."
+              placeholder="Ex.: Gostaria de alinhar dias e horários fixos para consultórios e recepção com profissional dedicado..."
               value={visitData.detalhes}
               onChange={(e) => setVisitData({ ...visitData, detalhes: e.target.value })}
               className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
