@@ -72,9 +72,9 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
   }
 
   return (
-    <div className="w-full bg-navy-900 border border-gold/30 rounded-2xl shadow-2xl p-6 sm:p-8 lg:p-10 backdrop-blur">
+    <div className="w-full bg-white border border-slate-200/90 rounded-2xl shadow-xl p-6 sm:p-8 lg:p-10">
       {/* Seletor de Abas */}
-      <div className="flex p-1.5 bg-navy-950 rounded-xl border border-navy-800 mb-8">
+      <div className="flex p-1.5 bg-slate-100 rounded-xl border border-slate-200 mb-8">
         <button
           type="button"
           onClick={() => {
@@ -84,7 +84,7 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
           className={`flex-1 py-3 px-4 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all duration-200 ${
             activeTab === "orcamento"
               ? "bg-gold text-navy-950 shadow-md"
-              : "text-slate-300 hover:text-white hover:bg-navy-900/50"
+              : "text-slate-600 hover:text-slate-950 hover:bg-white/60"
           }`}
         >
           <Calculator className="w-4 h-4" />
@@ -100,7 +100,7 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
           className={`flex-1 py-3 px-4 rounded-lg text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all duration-200 ${
             activeTab === "visita"
               ? "bg-gold text-navy-950 shadow-md"
-              : "text-slate-300 hover:text-white hover:bg-navy-900/50"
+              : "text-slate-600 hover:text-slate-950 hover:bg-white/60"
           }`}
         >
           <Calendar className="w-4 h-4" />
@@ -109,11 +109,11 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
       </div>
 
       {submitted && (
-        <div className="mb-6 p-4 rounded-xl bg-emerald-950/70 border border-emerald-500/50 text-emerald-200 text-sm flex items-start gap-3">
-          <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+        <div className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm flex items-start gap-3">
+          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-semibold text-white">Solicitação pronta para envio!</p>
-            <p className="text-emerald-300/90 text-xs mt-1">
+            <p className="font-semibold text-emerald-950">Solicitação pronta para envio!</p>
+            <p className="text-emerald-800 text-xs mt-1">
               Abrimos a conversa no WhatsApp com os seus dados prontos para atendimento. Caso não tenha aberto automaticamente, clique novamente no botão abaixo.
             </p>
           </div>
@@ -125,8 +125,8 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
         <form onSubmit={handleQuoteSubmit} className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <User className="w-3.5 h-3.5 text-gold" /> Seu Nome
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <User className="w-3.5 h-3.5 text-gold-dark" /> Seu Nome
               </label>
               <input
                 type="text"
@@ -134,13 +134,13 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
                 placeholder="Ex.: Carlos Silva"
                 value={quoteData.nome}
                 onChange={(e) => setQuoteData({ ...quoteData, nome: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Building className="w-3.5 h-3.5 text-gold" /> Empresa / Consultório
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Building className="w-3.5 h-3.5 text-gold-dark" /> Empresa / Consultório
               </label>
               <input
                 type="text"
@@ -148,15 +148,15 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
                 placeholder="Ex.: Clínica Sorriso / Advocacia Silva"
                 value={quoteData.empresa}
                 onChange={(e) => setQuoteData({ ...quoteData, empresa: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
               />
             </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-gold" /> WhatsApp com DDD
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Phone className="w-3.5 h-3.5 text-gold-dark" /> WhatsApp com DDD
               </label>
               <input
                 type="tel"
@@ -164,18 +164,18 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
                 placeholder="(48) 99999-9999"
                 value={quoteData.telefone}
                 onChange={(e) => setQuoteData({ ...quoteData, telefone: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-gold" /> Município
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-gold-dark" /> Município
               </label>
               <select
                 value={quoteData.cidade}
                 onChange={(e) => setQuoteData({ ...quoteData, cidade: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 focus:outline-none transition-colors"
               >
                 <option value="São José">São José - SC</option>
                 <option value="Florianópolis">Florianópolis - SC</option>
@@ -188,13 +188,13 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
 
           <div className="grid sm:grid-cols-3 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
                 Tipo de Imóvel
               </label>
               <select
                 value={quoteData.tipoEspaco}
                 onChange={(e) => setQuoteData({ ...quoteData, tipoEspaco: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-3 py-3 text-xs text-white focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-3 py-3 text-xs text-slate-900 focus:outline-none transition-colors"
               >
                 <option value="Pequeno Escritório / Empresa">Pequeno Escritório</option>
                 <option value="Consultório Médico / Odontológico">Consultório / Clínica</option>
@@ -205,13 +205,13 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1">
-                <Layers className="w-3.5 h-3.5 text-gold" /> Plano Escolhido
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1">
+                <Layers className="w-3.5 h-3.5 text-gold-dark" /> Plano Escolhido
               </label>
               <select
                 value={quoteData.pacote}
                 onChange={(e) => setQuoteData({ ...quoteData, pacote: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-3 py-3 text-xs text-white focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-3 py-3 text-xs text-slate-900 focus:outline-none transition-colors"
               >
                 <option value="Plano Dinâmico (2x por semana - Mais Escolhido)">Plano Dinâmico (2x/semana - Recomendado)</option>
                 <option value="Plano Diário (Segunda a Sexta - Frequência Inteligente)">Plano Diário (Seg a Sex)</option>
@@ -221,13 +221,13 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
                 Frequência
               </label>
               <select
                 value={quoteData.frequencia}
                 onChange={(e) => setQuoteData({ ...quoteData, frequencia: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-3 py-3 text-xs text-white focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-3 py-3 text-xs text-slate-900 focus:outline-none transition-colors"
               >
                 <option value="2x por semana (2ª e 4ª ou 3ª e 5ª - dias e horários definidos)">2x por semana (2ª e 4ª ou 3ª e 5ª)</option>
                 <option value="Diária (Segunda a sexta-feira - horários alinhados)">Diária (Segunda a sexta-feira)</option>
@@ -238,15 +238,15 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <MessageSquare className="w-3.5 h-3.5 text-gold" /> Detalhes ou Metragem Aproximada (Opcional)
+            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <MessageSquare className="w-3.5 h-3.5 text-gold-dark" /> Detalhes ou Metragem Aproximada (Opcional)
             </label>
             <textarea
               rows={3}
               placeholder="Ex.: Metragem aproximada de 100m², 2 banheiros e 1 copa. Gostaria de atendimento no período da manhã com pessoa fixa..."
               value={quoteData.mensagem}
               onChange={(e) => setQuoteData({ ...quoteData, mensagem: e.target.value })}
-              className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+              className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
             />
           </div>
 
@@ -257,7 +257,7 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             <Send className="w-5 h-5" />
             Enviar Solicitação Direto no WhatsApp
           </Button>
-          <p className="text-center text-xs text-slate-400">
+          <p className="text-center text-xs text-slate-500">
             Atendimento B2B humanizado com pessoa fixa e sem rotatividade. Seus dados são utilizados exclusivamente para a elaboração do seu orçamento.
           </p>
         </form>
@@ -268,8 +268,8 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
         <form onSubmit={handleVisitSubmit} className="space-y-5">
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <User className="w-3.5 h-3.5 text-gold" /> Seu Nome
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <User className="w-3.5 h-3.5 text-gold-dark" /> Seu Nome
               </label>
               <input
                 type="text"
@@ -277,13 +277,13 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
                 placeholder="Ex.: Dra. Marina Castro"
                 value={visitData.nome}
                 onChange={(e) => setVisitData({ ...visitData, nome: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Building className="w-3.5 h-3.5 text-gold" /> Nome da Empresa / Consultório
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Building className="w-3.5 h-3.5 text-gold-dark" /> Nome da Empresa / Consultório
               </label>
               <input
                 type="text"
@@ -291,15 +291,15 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
                 placeholder="Ex.: Consultório Integrado"
                 value={visitData.empresa}
                 onChange={(e) => setVisitData({ ...visitData, empresa: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
               />
             </div>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-gold" /> WhatsApp com DDD
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Phone className="w-3.5 h-3.5 text-gold-dark" /> WhatsApp com DDD
               </label>
               <input
                 type="tel"
@@ -307,18 +307,18 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
                 placeholder="(48) 98888-8888"
                 value={visitData.telefone}
                 onChange={(e) => setVisitData({ ...visitData, telefone: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-gold" /> Município
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-gold-dark" /> Município
               </label>
               <select
                 value={visitData.cidade}
                 onChange={(e) => setVisitData({ ...visitData, cidade: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 focus:outline-none transition-colors"
               >
                 <option value="São José">São José - SC</option>
                 <option value="Florianópolis">Florianópolis - SC</option>
@@ -331,26 +331,26 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-gold" /> Bairro ou Endereço
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-gold-dark" /> Bairro ou Endereço
               </label>
               <input
                 type="text"
                 placeholder="Ex.: Kobrasol / Campinas / Centro / Pedra Branca"
                 value={visitData.bairro}
                 onChange={(e) => setVisitData({ ...visitData, bairro: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-gold" /> Melhor Turno
+              <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-gold-dark" /> Melhor Turno
               </label>
               <select
                 value={visitData.turno}
                 onChange={(e) => setVisitData({ ...visitData, turno: e.target.value })}
-                className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 focus:outline-none transition-colors"
               >
                 <option value="Manhã (08h às 12h)">Manhã (08h às 12h)</option>
                 <option value="Tarde (13h30 às 18h)">Tarde (13h30 às 18h)</option>
@@ -361,15 +361,15 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <MessageSquare className="w-3.5 h-3.5 text-gold" /> O que você gostaria de priorizar na avaliação?
+            <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <MessageSquare className="w-3.5 h-3.5 text-gold-dark" /> O que você gostaria de priorizar na avaliação?
             </label>
             <textarea
               rows={3}
               placeholder="Ex.: Gostaria de alinhar dias e horários fixos para consultórios e recepção com profissional dedicado..."
               value={visitData.detalhes}
               onChange={(e) => setVisitData({ ...visitData, detalhes: e.target.value })}
-              className="w-full bg-navy-950 border border-navy-700 focus:border-gold rounded-lg px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none transition-colors"
+              className="w-full bg-slate-50 border border-slate-300 focus:border-gold focus:bg-white rounded-lg px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none transition-colors"
             />
           </div>
 
@@ -380,7 +380,7 @@ _Enviado pelo formulário do site metodo-limpezas.com.br_`
             <Calendar className="w-5 h-5" />
             Confirmar e Agendar Visita Técnica no WhatsApp
           </Button>
-          <p className="text-center text-xs text-slate-400">
+          <p className="text-center text-xs text-slate-500">
             A visita técnica é 100% gratuita e sem compromisso para São José, Florianópolis, Palhoça e Biguaçu.
           </p>
         </form>
